@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
+    <title>List Products</title>
+</head>
+<body>
+<div class="container col-6">
+    <h2>Product management</h2>
+    <table class="table table-active">
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="product:${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.amount}"></td>
+            <td th:text="${product.price}"></td>
+<!--            <td>-->
+<!--                <a th:href="@{/edit?id={id}(id=${user.id})}" class="btn btn-primary">Edit</a>-->
+<!--                <a th:href="@{/delete?id={id}(id=${user.id})}" class="btn btn-danger">Delete</a>-->
+<!--            </td>-->
+        </tr>
+    </table>
+    <a class="btn btn-success" href="/">Logout</a>
+</div>
+</body>
+</html>
