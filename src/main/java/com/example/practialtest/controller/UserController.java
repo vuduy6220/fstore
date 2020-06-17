@@ -27,7 +27,7 @@ public class UserController {
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         List<User> users = userResponsitory.findUserByUsernameAndPassword(username, password);
         if(users.isEmpty()) {
-            return "redirect:/";
+            return "redirect:/?msg=Please check your user name and passwod";
         }
         return "redirect:/list-product";
     }
